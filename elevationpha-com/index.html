@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Footprint and Reputation Analysis | Elevation Plumbing, Heating, Air and Drains</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.scorpion.co" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://scorpion-digital-footprint.netlify.app/assets/seo/seo-audit.css">
+    <style>
+    /* ============================== */
+    /* MOBILE-FIRST PERFORMANCE OPTIMIZATIONS */
+    /* ============================== */
+
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes rotateBorder {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+
+    /* === BACKGROUND === */
+    .gradient-mesh { opacity: 0.4 !important; }
+    .gradient-orb { filter: blur(120px) !important; }
+    #particleBg { display: none !important; }
+
+    /* === TYPOGRAPHY === */
+    body { color: #e2e2f0 !important; --text-secondary: #d4d4e0; --text-tertiary: #b8b8cc; }
+    .section-subtitle, p { color: #d4d4e0 !important; }
+    .hero-subtitle { color: #dcdce4 !important; font-size: 18px !important; max-width: 700px !important; margin: 0 auto !important; }
+
+    /* === CARDS === */
+    .bento-card, .insight-card, .chart-card {
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+    }
+
+    /* === SCORE HERO === */
+    .score-hero {
+      position: relative !important;
+      overflow: visible !important;
+      padding-top: 48px !important;
+      padding-bottom: 48px !important;
+    }
+    .score-hero .score-explanation {
+      max-width: 640px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .score-hero::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: -2px !important;
+      border-radius: 18px !important;
+      background: conic-gradient(from var(--angle, 0deg), #007FFD, #6D5AFF, #22d3ee, #007FFD) !important;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+      -webkit-mask-composite: xor !important;
+      mask-composite: exclude !important;
+      padding: 2px !important;
+      animation: rotateBorder 6s linear infinite !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
+    }
+    .score-hero > * { position: relative !important; z-index: 1 !important; }
+
+    /* === METRIC CARDS === */
+    .metric-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+      cursor: default !important;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(0, 127, 253, 0.1) !important;
+    }
+
+    /* === HERO BADGE === */
+    .hero-badge {
+      background: rgba(0,127,253,0.12) !important;
+      border: 1px solid rgba(0,127,253,0.25) !important;
+    }
+
+    /* === GRADIENT TEXT === */
+    .highlight-gradient {
+      background: linear-gradient(90deg, #007FFD, #6D5AFF, #22d3ee, #007FFD) !important;
+      background-size: 200% auto !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      animation: gradientShift 4s ease infinite !important;
+    }
+
+    /* === CTA BANNER === */
+    .cta-banner {
+      animation: none !important;
+      box-shadow: 0 4px 30px rgba(0, 127, 253, 0.2) !important;
+    }
+
+    /* === HERO BROWSER === */
+    .hero-browser-wrap { position: relative; overflow: hidden; }
+    .hero-browser-wrap::after { display: none !important; }
+    .hero-screenshot { animation: none !important; }
+
+    /* === BROWSER REFLECTION === */
+    .browser-reflection {
+      transform: scaleY(-1);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 50%);
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 50%);
+      filter: blur(4px);
+      opacity: 0.2;
+      pointer-events: none;
+      margin-top: -2px;
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+      height: 80px;
+    }
+
+    /* === SECTION DIVIDER === */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,127,253,0.3), rgba(109,90,255,0.3), transparent);
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    /* === OPPORTUNITY CARD === */
+    .opportunity-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .opportunity-card:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 30px rgba(0, 127, 253, 0.1) !important;
+    }
+
+    /* === LAYOUT === */
+    html, body { overflow-x: hidden !important; }
+
+    .score-explanation {
+      max-height: none !important;
+      overflow: visible !important;
+      display: block !important;
+      -webkit-line-clamp: unset !important;
+      line-clamp: unset !important;
+      position: relative !important;
+      max-width: 640px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      color: #d4d4e0 !important;
+    }
+    .score-explanation-wrap { position: relative; }
+    .score-explanation-wrap::after { display: none !important; }
+
+    /* === SAFETY NET === */
+    .metric-card, .opportunity-card, .bento-card,
+    .section-header .section-badge, .section-header .section-title, .section-header .section-subtitle,
+    .sub-score, .insight-card,
+    .bottom-line-header, .revenue-state, .stack-item, .bl-stat,
+    .cta-banner {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .section-header .section-title {
+      clip-path: none !important;
+    }
+
+    /* === TESTIMONIAL READABILITY === */
+    .testimonial-card {
+      border: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    .testimonial-text {
+      font-size: 15px !important;
+      line-height: 1.65 !important;
+      color: #dcdce4 !important;
+    }
+
+    /* === TABLE READABILITY === */
+    .competitor-table th {
+      font-size: 12px !important;
+      color: #8888a8 !important;
+    }
+    .competitor-table td {
+      font-size: 13px !important;
+      color: #d0d0e0 !important;
+    }
+
+    /* === MOBILE OPTIMIZATIONS — KILL EXPENSIVE EFFECTS === */
+    @media (max-width: 768px) {
+      .cta-banner-inner {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 24px !important;
+      }
+      .cta-banner-inner > div {
+        text-align: center !important;
+        flex: none !important;
+      }
+      .hero-subtitle { font-size: 16px !important; }
+
+      /* DISABLE EXPENSIVE EFFECTS ON MOBILE — these are paint-killers */
+      .browser-reflection { display: none !important; }
+      .gradient-mesh { display: none !important; }
+      .gradient-orb { display: none !important; }
+      .score-hero::before { animation: none !important; background: linear-gradient(135deg, #007FFD, #6D5AFF) !important; }
+      .highlight-gradient {
+        animation: none !important;
+        background: linear-gradient(90deg, #007FFD, #22d3ee) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+      .cta-banner { animation: none !important; }
+
+      /* Disable backdrop-filter on mobile — massive paint cost */
+      .bento-card, .insight-card, .chart-card {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: var(--bg-card) !important;
+      }
+
+      /* Disable hover transforms on mobile */
+      .metric-card:hover, .opportunity-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Reduce blur cost on score hero */
+      .score-hero { padding: 32px 16px !important; }
+      .score-hero::before { display: none !important; }
+
+      /* === LAYOUT === */
+      .container { padding: 0 12px !important; }
+      .section { padding: 32px 0 !important; }
+      .section-header { padding: 0 4px !important; }
+      .section-title { font-size: 22px !important; }
+      .section-subtitle { font-size: 14px !important; }
+
+      /* Score hero */
+      .score-ring-container svg { width: 140px !important; height: 140px !important; }
+      .score-value { font-size: 48px !important; }
+      .sub-scores-grid { flex-direction: column !important; gap: 12px !important; }
+      .sub-score { min-width: unset !important; }
+
+      /* Metric grids */
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .metric-card { padding: 16px !important; }
+      .metric-value { font-size: 24px !important; }
+
+      /* Tables — horizontal scroll */
+      .table-scroll-container { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+      .competitor-table { min-width: 500px !important; font-size: 13px !important; }
+      .competitor-name { gap: 8px !important; }
+      .competitor-avatar { width: 28px !important; height: 28px !important; font-size: 10px !important; }
+      .keyword-table-container { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+
+      /* Bento cards */
+      .bento-card { padding: 16px !important; }
+
+      /* Charts */
+      .chart-card { padding: 16px !important; }
+      .chart-container { height: auto !important; }
+
+      /* Gap chart */
+      .gap-chart { padding: 20px !important; }
+      .gap-row-header { flex-direction: column !important; gap: 4px !important; }
+      .gap-values { font-size: 11px !important; }
+
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr !important; }
+
+      /* Opportunity cards */
+      .opportunity-grid { grid-template-columns: 1fr !important; }
+
+      /* Local pack */
+      [style*="display: flex; gap: 12px; flex-wrap: wrap"] {
+        flex-direction: column !important;
+      }
+
+      /* Organic SERP results */
+      [style*="display: flex; align-items: center; gap: 12px; padding: 10px"] {
+        gap: 8px !important;
+      }
+
+      /* Social presence grid */
+      [style*="grid-template-columns: repeat(auto-fill"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* Action plan cards */
+      [style*="grid-template-columns: repeat(auto-fit, minmax(280px"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Backlinks card */
+      [style*="display: grid; grid-template-columns: repeat(3"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* AI visibility grid */
+      [style*="grid-template-columns: repeat(auto-fit, minmax(180px"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      /* Technical health */
+      [style*="display: flex; gap: 32px; align-items: flex-start"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* Position distribution */
+      [style*="display: flex; align-items: center; gap: 12px; margin-bottom: 8px"] {
+        gap: 8px !important;
+      }
+
+      /* Keyword movement */
+      [style*="display: grid; grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      /* Traffic chart header */
+      [style*="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+      }
+
+      /* CTA */
+      .bottom-cta { padding: 32px 20px !important; }
+      .bottom-cta h2 { font-size: 22px !important; }
+
+      /* Mobile nav */
+      .mobile-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .mobile-nav-item { font-size: 11px !important; white-space: nowrap; }
+
+      /* Table scroll hint */
+      .table-scroll-container {
+        position: relative !important;
+      }
+      .table-scroll-container::before {
+        content: 'Scroll →' !important;
+        display: block !important;
+        text-align: right !important;
+        font-size: 11px !important;
+        color: rgba(255,255,255,0.35) !important;
+        padding: 0 4px 6px 0 !important;
+        letter-spacing: 0.05em !important;
+      }
+
+      .mobile-nav {
+        -webkit-mask-image: linear-gradient(to right, black 82%, transparent 100%) !important;
+        mask-image: linear-gradient(to right, black 82%, transparent 100%) !important;
+      }
+    }
+
+    /* Bottom Line keyword bars fallback */
+    .stack-item .stack-bar-fill,
+    .opportunity-stack [style*="width"] {
+      min-width: 2px;
+    }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .browser-reflection { display: none !important; }
+    }
+    </style>
+</head>
+<body>
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <img src="https://scorpion-digital-footprint.netlify.app/assets/logo.png" alt="Scorpion" class="mobile-header-logo" decoding="async" loading="eager">
+            <div class="mobile-header-score">
+                <span class="mobile-header-score-value">71</span>
+                <span class="mobile-header-score-label">Score</span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#score" class="mobile-nav-item active">Score</a>
+            <a href="#market" class="mobile-nav-item">Market</a>
+            <a href="#reviews" class="mobile-nav-item">Reviews</a>
+            <a href="#visibility" class="mobile-nav-item">Search</a>
+            <a href="#competitors" class="mobile-nav-item">Competitors</a>
+            <a href="#opportunities" class="mobile-nav-item">Action</a>
+        </nav>
+    </header>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <div class="gradient-mesh">
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+    </div>
+    <canvas id="particleBg"></canvas>
+
+    <nav class="nav">
+        <img src="https://scorpion-digital-footprint.netlify.app/assets/logo.png" alt="Scorpion" class="nav-logo" decoding="async">
+        <div class="nav-items">
+            <a href="#market" class="nav-item">Market</a>
+            <a href="#score" class="nav-item">Score</a>
+            <a href="#reviews" class="nav-item">Reviews</a>
+            <a href="#visibility" class="nav-item">Search</a>
+            <a href="#competitors" class="nav-item">Competitors</a>
+            <a href="#opportunities" class="nav-item">Action Plan</a>
+        </div>
+        <a href="#opportunities" class="nav-cta" style="text-decoration: none;">View Action Plan</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding:100px 0 60px;">
+        <div class="hero-badge">Digital Footprint and Reputation Analysis</div>
+        <h1 class="hero-title">Elevation Plumbing, Heating, Air and Drains</h1>
+        <p class="hero-subtitle">See how your online presence stacks up against local competitors and discover opportunities to capture more market share.</p>
+        <div class="website-preview" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <div class="browser-frame" style="background: var(--bg-card); border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+                <div class="browser-header" style="background: rgba(255,255,255,0.05); padding: 12px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--glass-border);">
+                    <div style="display: flex; gap: 6px;">
+                        <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57;"></div>
+                        <div style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e;"></div>
+                        <div style="width: 12px; height: 12px; border-radius: 50%; background: #28c840;"></div>
+                    </div>
+                    <div style="flex: 1; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 6px 12px; font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                        elevationpha.com
+                    </div>
+                </div>
+                <div class="browser-content hero-browser-wrap" style="overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
+                    <img src="https://api.scorpion.co/platform/sitescreenshots/v1/api/screenshot/take/elevationpha.com.png" alt="Elevation Plumbing, Heating, Air and Drains website" class="hero-screenshot" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;" loading="eager" decoding="async" fetchpriority="high">
+                </div>
+            </div>
+            <div class="browser-reflection">
+                <img src="https://api.scorpion.co/platform/sitescreenshots/v1/api/screenshot/take/elevationpha.com.png" alt="" style="width: 100%; object-fit: cover; object-position: top;" aria-hidden="true" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Search Demand -->
+    <section class="section" id="market" style="margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); padding: 48px; max-width: none; background: linear-gradient(180deg, var(--bg-primary) 0%, #080812 50%, var(--bg-primary) 100%);">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div class="section-header" style="margin-bottom: 32px;">
+                <h2 class="section-title">Search Demand in Your Local Area</h2>
+                <p class="section-subtitle">How much of the local plumber search market you're capturing</p>
+            </div>
+            <div class="market-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px;">
+                <div class="bento-card" style="padding: 24px; background: linear-gradient(135deg, rgba(0, 127, 253, 0.12) 0%, rgba(109, 90, 255, 0.08) 100%), var(--bg-card);">
+                    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 4px;">Monthly Searches</div>
+                    <div data-counter="3114" data-suffix="+" style="font-size: 48px; font-weight: 900; background: linear-gradient(135deg, var(--success) 0%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1;">3,114+</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">People searching for your services</div>
+                </div>
+                <div class="bento-card" style="padding: 24px;">
+                    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--success); margin-bottom: 4px;">You Show Up For</div>
+                    <div data-counter="0" style="font-size: 36px; font-weight: 900; color: var(--success); line-height: 1;">0</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">Searches where you're on page 1</div>
+                </div>
+                <div class="bento-card" style="padding: 24px; text-align: center; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(248, 113, 113, 0.15) 0%, rgba(251, 146, 60, 0.1) 100%), var(--bg-card);">
+                    <div data-counter="100" data-suffix="%" style="font-size: 48px; font-weight: 900; color: var(--danger);">100%</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Invisible to potential customers</div>
+                    <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 8px; line-height: 1.4; font-style: italic;">Most people hire a service provider within 4 hours of searching</div>
+                </div>
+            </div>
+
+            <!-- The Gap -->
+            <div class="bento-card" style="padding: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(0, 127, 253, 0.08) 0%, rgba(34, 211, 153, 0.06) 100%), var(--bg-card);">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));"></div>
+                <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; text-align: center;">The Visibility Gap</div>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
+                        <span style="font-size: 13px; color: var(--text-secondary); min-width: 150px;">Your visibility</span>
+                        <span style="font-size: 13px; font-weight: 700; color: var(--success);">0 searches</span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.08); border-radius: 8px; height: 32px; overflow: hidden; position: relative;">
+                        <div style="background: linear-gradient(90deg, var(--success), var(--cyan)); height: 100%; width: 0%; border-radius: 8px; min-width: 24px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 8px;">
+                        <span style="font-size: 13px; color: var(--text-secondary); min-width: 150px;">Going to competitors</span>
+                        <span style="font-size: 13px; font-weight: 700; color: var(--danger);">3,114 searches</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 24px;">
+                    <div style="font-size: 14px; color: var(--text-secondary);">0 keywords are on page 2 &mdash; <strong style="color: var(--cyan);">almost on page 1</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Score Section -->
+    <section class="score-hero" id="score">
+        <div class="score-hero-content">
+            <div class="section-header" style="margin-bottom: 24px;">
+                <h2 class="section-title">Digital Footprint Score</h2>
+            </div>
+            <div class="overall-score">
+                <svg viewBox="0 0 300 300">
+                    <defs><linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fbbf24"/><stop offset="100%" style="stop-color:#fb923c"/></linearGradient></defs>
+                    <circle class="score-ring-track" cx="150" cy="150" r="140"/>
+                    <circle class="score-ring-fill" cx="150" cy="150" r="140" data-target-offset="255" style="stroke-dashoffset: 255"/>
+                </svg>
+                <div class="score-center">
+                    <div class="score-number" data-target-score="71">71</div>
+                    <div class="score-label">of 100</div>
+                </div>
+            </div>
+            <div class="score-verdict">Solid Foundation</div>
+            <div class="score-explanation-wrap" style="margin-bottom: 32px;"><p class="score-explanation">Elevation Plumbing, Heating, Air and Drains has built a solid reputation in  but has significant room to grow their digital presence. With 33 keywords currently ranking, there&#39;s a clear opportunity to capture more of the search market.</p></div>
+            <div class="sub-scores" style="margin-top: 16px;">
+                <div class="sub-score">
+                    <div class="sub-score-value danger">Fair</div>
+                    <div class="sub-score-info"><div class="sub-score-label">Website Speed</div><div class="sub-score-avg">4.8s load time</div></div>
+                </div>
+                <div class="sub-score">
+                    <div class="sub-score-value danger">Needs Work</div>
+                    <div class="sub-score-info"><div class="sub-score-label">Search Visibility</div><div class="sub-score-avg">2 of 33 on page 1 (6%)</div></div>
+                </div>
+                <div class="sub-score">
+                    <div class="sub-score-value warning">Excellent</div>
+                    <div class="sub-score-info"><div class="sub-score-label">Reviews</div><div class="sub-score-avg">4.9★ (947 reviews)</div></div>
+                </div>
+                <div class="sub-score">
+                    <div class="sub-score-value danger">Fair</div>
+                    <div class="sub-score-info"><div class="sub-score-label">Local Presence</div><div class="sub-score-avg">6/8 signals</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <div class="section-divider"></div>
+    <section class="section" id="reviews" style="padding:40px 0;">
+        <div class="section-header">
+            <div class="section-badge">Online Reputation</div>
+            <h2 class="section-title">Review Performance</h2>
+            <p class="section-subtitle">Your online reputation across major platforms</p>
+        </div>
+        <div class="metric-grid" style="margin-bottom: 40px;">
+            <div class="metric-card success">
+                <div class="metric-value">4.9&#9733;</div>
+                <div class="metric-label">Google Rating</div>
+                <div class="metric-comparison above">947 reviews</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">&mdash;</div>
+                <div class="metric-label">Yelp Rating</div>
+                <div class="metric-comparison">Not measured</div>
+            </div>
+            <div class="metric-card success">
+                <div class="metric-value">947</div>
+                <div class="metric-label">Total Reviews</div>
+            </div>
+            <div class="metric-card success">
+                <div class="metric-value">4.9&#9733;</div>
+                <div class="metric-label">Average Rating</div>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 12px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #34d399; flex-shrink: 0;"></div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">Last review: Today</div>
+              <div style="font-size: 11px; color: #34d399; font-weight: 500;">Active review profile</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 12px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #34d399; flex-shrink: 0;"></div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">20+ Google Business photos</div>
+              <div style="font-size: 11px; color: #34d399; font-weight: 500;">Good visual presence</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 12px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #34d399; flex-shrink: 0;"></div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">Business hours listed</div>
+              <div style="font-size: 11px; color: #34d399; font-weight: 500;">Helps customers know when to call</div>
+            </div>
+          </div>
+        </div>
+
+        
+    <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 28px; margin-top: 24px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">Rating Distribution</div>
+      
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 44px;">5 stars</span>
+        <div style="flex: 1; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;">
+          <div class="rating-bar-fill" style="height: 100%; width: 99%; background: #34d399; border-radius: 6px; transition: width 0.6s ease;"></div>
+        </div>
+        <span style="font-size: 12px; color: var(--text-tertiary); min-width: 52px; text-align: right;">933 (99%)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 44px;">4 stars</span>
+        <div style="flex: 1; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;">
+          <div class="rating-bar-fill" style="height: 100%; width: 0%; background: #34d399; border-radius: 6px; transition: width 0.6s ease;"></div>
+        </div>
+        <span style="font-size: 12px; color: var(--text-tertiary); min-width: 52px; text-align: right;">1 (0%)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 44px;">3 stars</span>
+        <div style="flex: 1; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;">
+          <div class="rating-bar-fill" style="height: 100%; width: 0%; background: #fbbf24; border-radius: 6px; transition: width 0.6s ease;"></div>
+        </div>
+        <span style="font-size: 12px; color: var(--text-tertiary); min-width: 52px; text-align: right;">1 (0%)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 44px;">2 stars</span>
+        <div style="flex: 1; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;">
+          <div class="rating-bar-fill" style="height: 100%; width: 0%; background: #f87171; border-radius: 6px; transition: width 0.6s ease;"></div>
+        </div>
+        <span style="font-size: 12px; color: var(--text-tertiary); min-width: 52px; text-align: right;">1 (0%)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 44px;">1 star</span>
+        <div style="flex: 1; height: 12px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;">
+          <div class="rating-bar-fill" style="height: 100%; width: 1%; background: #f87171; border-radius: 6px; transition: width 0.6s ease;"></div>
+        </div>
+        <span style="font-size: 12px; color: var(--text-tertiary); min-width: 52px; text-align: right;">11 (1%)</span>
+      </div>
+    </div>
+
+        
+    <div class="bento-card" style="margin-top: 24px; margin-bottom: 40px; padding: 28px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Review Sentiment vs Industry</div>
+        <div style="display: flex; gap: 16px; font-size: 11px; color: var(--text-tertiary);">
+          <span><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--magenta)); margin-right: 4px;"></span>You</span>
+          <span><span style="display: inline-block; width: 8px; height: 2px; background: var(--orange); margin-right: 4px; vertical-align: middle;"></span>Avg</span>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Response Time</span>
+          <span style="font-size: 12px; font-weight: 700; color: #34d399;">75/100 <span style="color: var(--text-tertiary); font-weight: 400;">(+5 vs avg)</span></span>
+        </div>
+        <div style="position: relative; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; height: 100%; width: 75%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px; transition: width 1s;"></div>
+          <div style="position: absolute; top: -3px; left: 70%; width: 2px; height: 14px; background: var(--orange); border-radius: 1px;" title="Industry avg: 70"></div>
+        </div>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Communication</span>
+          <span style="font-size: 12px; font-weight: 700; color: #34d399;">78/100 <span style="color: var(--text-tertiary); font-weight: 400;">(+3 vs avg)</span></span>
+        </div>
+        <div style="position: relative; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; height: 100%; width: 78%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px; transition: width 1s;"></div>
+          <div style="position: absolute; top: -3px; left: 75%; width: 2px; height: 14px; background: var(--orange); border-radius: 1px;" title="Industry avg: 75"></div>
+        </div>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Quality</span>
+          <span style="font-size: 12px; font-weight: 700; color: #34d399;">80/100 <span style="color: var(--text-tertiary); font-weight: 400;">(+2 vs avg)</span></span>
+        </div>
+        <div style="position: relative; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; height: 100%; width: 80%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px; transition: width 1s;"></div>
+          <div style="position: absolute; top: -3px; left: 78%; width: 2px; height: 14px; background: var(--orange); border-radius: 1px;" title="Industry avg: 78"></div>
+        </div>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Professionalism</span>
+          <span style="font-size: 12px; font-weight: 700; color: #34d399;">82/100 <span style="color: var(--text-tertiary); font-weight: 400;">(+2 vs avg)</span></span>
+        </div>
+        <div style="position: relative; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; height: 100%; width: 82%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px; transition: width 1s;"></div>
+          <div style="position: absolute; top: -3px; left: 80%; width: 2px; height: 14px; background: var(--orange); border-radius: 1px;" title="Industry avg: 80"></div>
+        </div>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Pricing</span>
+          <span style="font-size: 12px; font-weight: 700; color: #fbbf24;">70/100 <span style="color: var(--text-tertiary); font-weight: 400;">(-2 vs avg)</span></span>
+        </div>
+        <div style="position: relative; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; height: 100%; width: 70%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px; transition: width 1s;"></div>
+          <div style="position: absolute; top: -3px; left: 72%; width: 2px; height: 14px; background: var(--orange); border-radius: 1px;" title="Industry avg: 72"></div>
+        </div>
+      </div>
+    </div>
+
+        
+  <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 16px;">What Customers Are Saying</h4>
+  <div class="highlights-grid">
+    <span class="highlight-tag">"Reliable and professional service"</span><span class="highlight-tag">"Quick response times"</span><span class="highlight-tag">"Fair and transparent pricing"</span>
+  </div>
+
+        <div class="testimonials-grid" style="margin-top: 40px;">
+  <div class="testimonial-card">
+    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <p class="testimonial-text">"I had Jesus T a HVAC technician come out to provide a quote, and I was very impressed with the experience. He was punctual, professional, and took the time to thoroughly assess the project. He answere..."</p>
+    <div class="testimonial-author">&mdash; Kurt Ostrander</div>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <p class="testimonial-text">"Great work by this 2 gentleman. Would recommend all my friends"</p>
+    <div class="testimonial-author">&mdash; Amina Mohamed</div>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <p class="testimonial-text">"Malachi and Mathias were w wonderful! Quick and clean"</p>
+    <div class="testimonial-author">&mdash; Anne Jackson</div>
+  </div>
+</div>
+
+        
+    </section>
+
+    <div class="section-divider"></div>
+
+    
+
+    
+    <section class="section" style="padding:0 0 48px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: 4px;">Keyword Momentum</div>
+            <div style="font-size: 20px; font-weight: 800; color: var(--text-primary);">How your rankings are shifting</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; background: rgba(34, 211, 153, 0.12); color: #34d399; font-weight: 700; font-size: 14px;">
+            &#9650; 24 net
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 100px; text-align: center; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
+      <div style="font-size: 12px; color: #22d3ee; margin-bottom: 4px;">&#9733;</div>
+      <div data-counter="20" style="font-size: 24px; font-weight: 800; color: #22d3ee;">20</div>
+      <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">New</div>
+    </div>
+    <div style="flex: 1; min-width: 100px; text-align: center; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
+      <div style="font-size: 12px; color: #34d399; margin-bottom: 4px;">&#9650;</div>
+      <div data-counter="8" style="font-size: 24px; font-weight: 800; color: #34d399;">8</div>
+      <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Rising</div>
+    </div>
+    <div style="flex: 1; min-width: 100px; text-align: center; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
+      <div style="font-size: 12px; color: #f87171; margin-bottom: 4px;">&#9660;</div>
+      <div data-counter="4" style="font-size: 24px; font-weight: 800; color: #f87171;">4</div>
+      <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Declining</div>
+    </div>
+    <div style="flex: 1; min-width: 100px; text-align: center; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
+      <div style="font-size: 12px; color: #94a3b8; margin-bottom: 4px;">&#10007;</div>
+      <div data-counter="0" style="font-size: 24px; font-weight: 800; color: #94a3b8;">0</div>
+      <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Lost</div>
+    </div></div>
+        <div style="height: 10px; background: rgba(255,255,255,0.06); border-radius: 5px; overflow: hidden; display: flex;"><div style="height: 100%; width: 63%; background: #22d3ee; min-width: 2px;" title="New: 20"></div><div style="height: 100%; width: 25%; background: #34d399; min-width: 2px;" title="Rising: 8"></div><div style="height: 100%; width: 13%; background: #f87171; min-width: 2px;" title="Declining: 4"></div></div>
+        
+      </div>
+    </section>
+
+    <!-- Search Visibility -->
+    <section class="section" id="visibility" style="padding:40px 0;">
+        <div class="section-header">
+            <div class="section-badge">Search Performance</div>
+            <h2 class="section-title">Search Visibility</h2>
+            <p class="section-subtitle">How easily customers find you when searching for home services</p>
+        </div>
+        <div class="metric-grid">
+            <div class="metric-card ">
+                <div class="metric-value">33</div>
+                <div class="metric-label">Keywords Ranking</div>
+                <div class="metric-comparison below">Top competitor: 12</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">~66</div>
+                <div class="metric-label">Monthly Organic Visitors</div>
+            </div>
+            <div class="metric-card success">
+                <div class="metric-value">$2,708</div>
+                <div class="metric-label">Organic Traffic Value</div>
+                <div class="metric-comparison above">Monthly value of your organic search</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">292</div>
+                <div class="metric-label">Websites Linking to You</div>
+            </div>
+        </div>
+
+        
+    <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 28px; margin-top: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Where Your Keywords Rank</div>
+        <div style="display: flex; gap: 16px;">
+          <span style="font-size: 13px; color: var(--success); font-weight: 600;">2 on page 1 (6%)</span>
+          <span style="font-size: 13px; color: #fbbf24; font-weight: 600;">3 on page 2</span>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#1</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 3%; background: #34d399; border-radius: 6px; min-width: 2px;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #34d399; min-width: 50px; text-align: right;">1</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">3%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#2-3</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 0%; background: #22d3ee; border-radius: 6px; min-width: 0;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #22d3ee; min-width: 50px; text-align: right;">0</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">0%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#4-10</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 3%; background: #007FFD; border-radius: 6px; min-width: 2px;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #007FFD; min-width: 50px; text-align: right;">1</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">3%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#11-20</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 9%; background: #fbbf24; border-radius: 6px; min-width: 2px;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #fbbf24; min-width: 50px; text-align: right;">3</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">9%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#21-50</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 42%; background: #fb923c; border-radius: 6px; min-width: 2px;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #fb923c; min-width: 50px; text-align: right;">14</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">42%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 48px;">#51+</span>
+        <div style="flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative;">
+          <div class="diff-bar-fill" style="height: 100%; width: 42%; background: #f87171; border-radius: 6px; min-width: 2px;"></div>
+        </div>
+        <span style="font-size: 13px; font-weight: 700; color: #f87171; min-width: 50px; text-align: right;">14</span>
+        <span style="font-size: 11px; color: var(--text-tertiary); min-width: 40px; text-align: right;">42%</span>
+      </div>
+      <div style="margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.2);">
+        <span style="font-size: 13px; color: #fbbf24; font-weight: 600;">3 keywords on page 2</span>
+        <span style="font-size: 13px; color: var(--text-secondary);"> &mdash; these are your fastest path to more visibility. A small ranking boost moves them onto page 1.</span>
+      </div>
+    </div>
+
+        
+    <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px; margin-top: 24px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Who's Linking to You</div>
+      <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin: 0 0 18px 0;">Links from other websites act like votes of confidence with Google. The more reputable sites that link to you, the more Google trusts your business.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div style="text-align: center;">
+          <div data-counter="292" style="font-size: 22px; font-weight: 800; color: var(--accent-light);">292</div>
+          <div style="font-size: 11px; color: var(--text-tertiary);">Websites Linking to You</div>
+        </div>
+        <div style="text-align: center;">
+          <div data-counter="471" style="font-size: 22px; font-weight: 800; color: var(--text-primary);">471</div>
+          <div style="font-size: 11px; color: var(--text-tertiary);">Total Links to Your Site</div>
+        </div>
+        <div style="text-align: center;">
+          <div data-counter="74" data-suffix="%" style="font-size: 22px; font-weight: 800; color: #34d399;">74%</div>
+          <div style="font-size: 11px; color: var(--text-tertiary);">% That Boost Rankings</div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">You vs. Top-Ranking Competitors</div>
+        <div style="margin-bottom: 6px;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 3px;"><span>You</span><span>471</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: 100%; background: linear-gradient(90deg, var(--accent), var(--magenta)); border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 3px;"><span>SERP Avg</span><span>65</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: 14%; background: rgba(255,255,255,0.2); border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+    <div style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.08) 100%), var(--bg-card); border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 16px; padding: 24px; margin-top: 24px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(251, 191, 36, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" style="width: 22px; height: 22px;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Active Google Ads Detected</div>
+        <div style="font-size: 13px; color: var(--text-secondary); margin-top: 2px;">Elevation Plumbing, Heating, Air and Drains is currently running Google Ads (9 ads found). Combining paid and organic strategies strengthens overall search visibility.</div>
+      </div>
+    </div>
+
+        <div class="keyword-opportunities" style="margin-top:48px">
+            <div class="keyword-opp-header">
+                <h3>Top Keyword Opportunities</h3>
+                <p>Your highest-value keywords &mdash; what you're capturing vs. what you're missing</p>
+            </div>
+            <div class="table-scroll-container">
+            <table class="competitor-table">
+                <thead><tr><th>Keyword</th><th>Searches/Mo</th><th>Position</th><th>Intent</th><th>Trend</th><th>Visibility</th></tr></thead>
+                <tbody><tr>
+    <td><strong>elevation mechanical</strong></td>
+    <td>1,000</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">50 missed/mo</td></tr>
+<tr>
+    <td><strong>plumbing provo utah</strong></td>
+    <td>590</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">590 missed/mo</td></tr>
+<tr>
+    <td><strong>elevated plumbing</strong></td>
+    <td>480</td>
+    <td><span class="badge-pill danger">#44</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #f87171;">&#9660;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">384 missed/mo</td></tr>
+<tr>
+    <td><strong>plumbing bountiful</strong></td>
+    <td>320</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">320 missed/mo</td></tr>
+<tr>
+    <td><strong>plumber bountiful ut</strong></td>
+    <td>320</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">320 missed/mo</td></tr>
+<tr>
+    <td><strong>plumbers park city</strong></td>
+    <td>260</td>
+    <td><span class="badge-pill danger">#39</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">260 missed/mo</td></tr>
+<tr>
+    <td><strong>elevation plumbing heating and air</strong></td>
+    <td>170</td>
+    <td><span class="badge-pill warning">#4</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #64748b;">&#8212;</span></td>
+    <td style="color: var(--success); font-weight: 700;">&#10003; Visible</td></tr>
+<tr>
+    <td><strong>elevation plumbing</strong></td>
+    <td>140</td>
+    <td><span class="badge-pill warning">#9</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #f87171;">&#9660;</span></td>
+    <td style="color: var(--success); font-weight: 700;">&#10003; Visible</td></tr>
+<tr>
+    <td><strong>appliance repair heber city</strong></td>
+    <td>110</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">110 missed/mo</td></tr>
+<tr>
+    <td><strong>air conditioning contractor salt lake city</strong></td>
+    <td>110</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">110 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>contractors hvac slc</strong></td>
+    <td>110</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">110 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>heating contractor utah</strong></td>
+    <td>110</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">110 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>plumber heber city</strong></td>
+    <td>90</td>
+    <td><span class="badge-pill danger">#33</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">90 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>plumbers heber city utah</strong></td>
+    <td>90</td>
+    <td><span class="badge-pill danger">#45</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">90 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>hvac bountiful utah</strong></td>
+    <td>90</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">90 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>elevation heating and cooling</strong></td>
+    <td>90</td>
+    <td><span class="badge-pill danger">#40</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #f87171;">&#9660;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">5 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>springville plumbing</strong></td>
+    <td>70</td>
+    <td><span class="badge-pill danger">#35</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">70 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>altitude plumbing</strong></td>
+    <td>70</td>
+    <td><span class="badge-pill danger">#33</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">70 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>plumbers heber springs</strong></td>
+    <td>70</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">70 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>elevate plumbers</strong></td>
+    <td>40</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">32 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>elevation hvac</strong></td>
+    <td>40</td>
+    <td><span class="badge-pill danger">#15</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">2 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>heber valley plumbing</strong></td>
+    <td>30</td>
+    <td><span class="badge-pill danger">#30</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">30 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>utah water softener systems</strong></td>
+    <td>30</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">30 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>heating salt lake city</strong></td>
+    <td>30</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">30 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>plumber 84058</strong></td>
+    <td>30</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">24 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>high elevation plumbing</strong></td>
+    <td>30</td>
+    <td><span class="badge-pill danger">#36</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(148, 163, 184, 0.15);color:#94a3b8;">Brand</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">2 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>evaporated salt pellets near me</strong></td>
+    <td>20</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">16 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>heating sandy</strong></td>
+    <td>20</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #22d3ee; font-weight: 700; font-size: 11px;">NEW</span></td>
+    <td style="color: var(--danger); font-weight: 700;">16 missed/mo</td></tr>
+<tr class="kw-extra" style="display:none;">
+    <td><strong>plumbing repair provo</strong></td>
+    <td>10</td>
+    <td><span class="badge-pill danger">Not ranking</span></td>
+    <td><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(99, 102, 241, 0.15);color:#818cf8;">High intent</span></td>
+    <td style="text-align:center;"><span style="color: #34d399;">&#9650;</span></td>
+    <td style="color: var(--danger); font-weight: 700;">10 missed/mo</td></tr></tbody>
+            </table>
+            
+  <div style="text-align: center; margin-top: 16px;">
+    <button onclick="document.querySelectorAll('.kw-extra').forEach(r=>r.style.display=r.style.display==='none'?'table-row':'none');this.textContent=this.textContent.includes('Show')?'Show fewer':'Show all 29 keywords'"
+      style="background: rgba(0,127,253,0.1); border: 1px solid rgba(0,127,253,0.3); color: var(--accent-light); padding: 10px 24px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;">
+      Show all 29 keywords
+    </button>
+  </div>
+            </div>
+        </div>
+
+        <div class="insights-grid" style="margin-top: 40px;">
+            <div class="insight-card">
+                <div class="insight-card-header">
+                    <div class="insight-icon danger">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="insight-card-title">The Visibility Gap</div>
+                </div>
+                <p class="insight-card-text">Currently ranking for 33 keywords with approximately 66 monthly organic visitors. There are 3,114 monthly searches where you&#39;re not showing up on page 1.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-card-header">
+                    <div class="insight-icon success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="insight-card-title">The Opportunity</div>
+                </div>
+                <p class="insight-card-text">With 0 keywords sitting on page 2 and 3,114 monthly searches going to competitors, there&#39;s significant room to grow your visibility.</p>
+            </div>
+        </div>
+
+        <div class="why-matters" style="margin-top: 40px; padding: 40px 32px; background: linear-gradient(135deg, rgba(248, 113, 113, 0.08), rgba(251, 191, 36, 0.06)); border: 1px solid rgba(248, 113, 113, 0.2); border-radius: 16px;">
+            <div class="why-matters-icon" style="margin-bottom: 16px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 32px; height: 32px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <div style="font-size: 42px; font-weight: 800; background: linear-gradient(135deg, #f87171, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; line-height: 1.1;">3,114</div>
+            <div style="font-size: 16px; font-weight: 600; color: var(--text-secondary); margin-bottom: 20px;">monthly searches going to your competitors</div>
+            <div class="why-matters-label" style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--danger); margin-bottom: 8px;">Why This Matters</div>
+            <p class="why-matters-text" style="font-size: 16px; line-height: 1.7; color: var(--text-secondary);">In Your Local Area, the businesses on page one are capturing the customers who are ready to hire right now. At your current rankings, Elevation Plumbing, Heating, Air and Drains is not part of that conversation for 3,114 searches every month.</p>
+        </div>
+    </section>
+
+    
+    <section class="section" id="competitors" style="padding:40px 0;">
+      <div class="section-header">
+        <div class="section-badge">Competitive Landscape</div>
+        <h2 class="section-title">How You Stack Up</h2>
+        <p class="section-subtitle">Your position in the local home services market</p>
+      </div>
+      
+      
+  <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+    <div style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">You have the foundation.</div>
+    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0;">Your keyword count, traffic, and reviews are competitive with or ahead of local businesses in your market. The gap is technical and strategic: site speed, schema markup, and local search signals are the factors keeping competitors ahead in the rankings despite your stronger metrics.</p>
+  </div>
+      <div class="table-scroll-container">
+        <table class="competitor-table">
+          <thead><tr><th>Rank</th><th>Business</th><th>Traffic</th><th>Keywords</th><th>Rating</th></tr></thead>
+          <tbody><tr class="highlight-row">
+      <td><span class="badge-pill " style="background: linear-gradient(135deg, var(--accent), var(--magenta)); color: white;">#1</span></td>
+      <td>
+        <div class="competitor-name">
+          <div class="competitor-avatar you" style="background: linear-gradient(135deg, var(--accent), var(--magenta)); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);">EP</div>
+          <div>
+            <strong style="color: var(--accent-light)">Elevation Plumbing, Heating, Air and Drains</strong>
+            <div style="font-size: 11px; color: var(--accent); font-weight: 600;">YOUR BUSINESS</div>
+          </div>
+        </div>
+      </td>
+      <td><span class="badge-pill success">66</span></td>
+      <td><span class="badge-pill success">33</span></td>
+      <td>4.9&#9733;</td>
+    </tr>
+<tr>
+      <td><span class="badge-pill warning" >#2</span></td>
+      <td>
+        <div class="competitor-name">
+          <div class="competitor-avatar" >B</div>
+          <div>
+            <strong >Buildzoom</strong>
+            <div style="font-size: 11px; color: var(--text-tertiary);"></div>
+          </div>
+        </div>
+      </td>
+      <td><span class="badge-pill ">61</span></td>
+      <td><span class="badge-pill ">12</span></td>
+      <td>&mdash;</td>
+    </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    
+    <section class="section" style="padding:40px 0;">
+      <div class="section-header">
+        <div class="section-badge">Technical Health</div>
+        <h2 class="section-title">Website Performance</h2>
+        <p class="section-subtitle">How your website performs for visitors and search engines</p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 32px;">
+        <div style="display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap;">
+          
+    <div style="position: relative; width: 90px; height: 90px; flex-shrink: 0;">
+      <svg viewBox="0 0 80 80" style="width: 90px; height: 90px; transform: rotate(-90deg);">
+        <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+        <circle cx="40" cy="40" r="36" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"
+          stroke-dasharray="226.2" stroke-dashoffset="90.5"/>
+      </svg>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+        <div style="font-size: 22px; font-weight: 800; color: #fbbf24;">60</div>
+        <div style="font-size: 11px; color: var(--text-tertiary);">Lighthouse</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: -4px;">
+      <span style="font-size: 11px; color: rgba(251,191,36,0.6);">Needs improvement &bull; Goal: 90+</span>
+    </div>
+          <div style="flex: 1; min-width: 280px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
+              
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px; text-align: center;">
+      <div style="font-size: 24px; font-weight: 800; color: #f87171;">4.8s</div>
+      <div style="font-size: 12px; color: var(--text-tertiary); margin-top: 4px;">Speed Index</div>
+      <div style="font-size: 11px; color: rgba(248,113,113,0.5); margin-top: 3px;">Good: under 3s</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px; text-align: center;">
+      <div style="font-size: 24px; font-weight: 800; color: #f87171;">14.08s</div>
+      <div style="font-size: 12px; color: var(--text-tertiary); margin-top: 4px;">DOM Complete</div>
+      <div style="font-size: 11px; color: rgba(248,113,113,0.5); margin-top: 3px;">Good: under 3s</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px; text-align: center;">
+      <div style="font-size: 24px; font-weight: 800; color: #fbbf24;">N/A</div>
+      <div style="font-size: 12px; color: var(--text-tertiary); margin-top: 4px;">Content Rate</div>
+      <div style="font-size: 11px; color: rgba(251,191,36,0.5); margin-top: 3px;">Good: above 10%</div>
+    </div>
+            </div>
+            
+      <div style="margin-top: 16px;">
+        <div style="font-size: 12px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">Core Web Vitals</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px;">
+          
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 10px; padding: 12px; text-align: center;">
+              <div style="font-size: 20px; font-weight: 800; color: #f87171;">14.1s</div>
+              <div style="font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-top: 2px;">LCP</div>
+              <div style="font-size: 10px; color: var(--text-tertiary);">Largest Contentful Paint</div>
+              <div style="font-size: 11px; color: rgba(248,113,113,0.6); margin-top: 3px;">Goal: under 2.5s</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 10px; padding: 12px; text-align: center;">
+              <div style="font-size: 20px; font-weight: 800; color: #34d399;">0.001</div>
+              <div style="font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-top: 2px;">CLS</div>
+              <div style="font-size: 10px; color: var(--text-tertiary);">Cumulative Layout Shift</div>
+              <div style="font-size: 11px; color: rgba(52,211,153,0.6); margin-top: 3px;">Goal: under 0.1</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 10px; padding: 12px; text-align: center;">
+              <div style="font-size: 20px; font-weight: 800; color: #f87171;">190ms</div>
+              <div style="font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-top: 2px;">FID</div>
+              <div style="font-size: 10px; color: var(--text-tertiary);">First Input Delay</div>
+              <div style="font-size: 11px; color: rgba(248,113,113,0.6); margin-top: 3px;">Goal: under 100ms</div>
+            </div>
+        </div>
+      </div>
+            
+      <div style="margin-top: 16px;">
+        <div style="font-size: 12px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">Lighthouse Scores</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          
+            <div style="display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 8px;">
+              <span style="font-size: 18px; font-weight: 800; color: #34d399;">93</span>
+              <span style="font-size: 12px; color: var(--text-secondary);">Accessibility</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 8px;">
+              <span style="font-size: 18px; font-weight: 800; color: #34d399;">92</span>
+              <span style="font-size: 12px; color: var(--text-secondary);">SEO</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 8px;">
+              <span style="font-size: 18px; font-weight: 800; color: #34d399;">100</span>
+              <span style="font-size: 12px; color: var(--text-secondary);">Best Practices</span>
+            </div>
+        </div>
+      </div>
+            
+    <div style="margin-top: 20px;">
+      <div style="font-size: 12px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">Technical Checks</div>
+      
+    <div style="display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04);">
+      <div style="width: 6px; height: 6px; border-radius: 50%; background: #f87171; flex-shrink: 0;"></div>
+      <span style="font-size: 13px; color: var(--text-secondary);">No schema markup found — search engines can't identify your business type, services, or reviews</span>
+    </div>
+      
+      
+    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  <section class="section" id="gaps" style="padding:40px 0;">
+    <div class="section-header">
+      <div class="section-badge">2 Gaps Found</div>
+      <h2 class="section-title">What's Missing</h2>
+      <p class="section-subtitle">Signals your competitors may be using that you're not</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;">
+      
+        <div style="display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: var(--bg-card); border: 1px solid rgba(248,113,113,0.2); border-radius: 12px;">
+          <div style="color: #f87171; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <span style="font-size: 14px; color: var(--text-primary); font-weight: 600;">LCP 14.1s (Google threshold: 2.5s)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: var(--bg-card); border: 1px solid rgba(248,113,113,0.2); border-radius: 12px;">
+          <div style="color: #f87171; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <span style="font-size: 14px; color: var(--text-primary); font-weight: 600;">Name, Address, Phone Number inconsistency: Business name differs: &quot;Elevation Plumbing, Heating, Air and Drains&quot; (Google) vs &quot;Plumber Near Me | Plumbing Heating &amp; Air Experts&quot; (Website)</span>
+        </div>
+    </div>
+  </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Action Plan -->
+    <section class="section" id="opportunities" style="padding:40px 0;">
+        <div class="section-header">
+            <div class="section-badge">Action Plan</div>
+            <h2 class="section-title">Growth Opportunities</h2>
+            <p class="section-subtitle">Prioritized actions to improve your digital presence</p>
+        </div>
+        <div class="opportunity-grid">
+    <div class="opportunity-card">
+      <div class="opportunity-header">
+        <div class="opportunity-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <span class="badge-pill danger">High Priority</span>
+      </div>
+      <h3 class="opportunity-title">Dominate High-Intent Search Terms</h3>
+      <p class="opportunity-description">Target high-volume, high-intent keywords to capture customers actively searching for your services.</p>
+      <div class="opportunity-impact" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 600; color: var(--cyan);">Capture 3,114+ missed searches/mo</div>
+    </div>
+  
+    <div class="opportunity-card">
+      <div class="opportunity-header">
+        <div class="opportunity-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <span class="badge-pill danger">High Priority</span>
+      </div>
+      <h3 class="opportunity-title">Build Location-Specific Pages</h3>
+      <p class="opportunity-description">Create dedicated pages for each city you serve to capture local search traffic.</p>
+      <div class="opportunity-impact" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 600; color: var(--cyan);">Expand geographic keyword coverage</div>
+    </div>
+  
+    <div class="opportunity-card">
+      <div class="opportunity-header">
+        <div class="opportunity-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <span class="badge-pill danger">High Priority</span>
+      </div>
+      <h3 class="opportunity-title">Optimize Review Generation</h3>
+      <p class="opportunity-description">Implement a systematic review generation program to build trust signals.</p>
+      <div class="opportunity-impact" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 600; color: var(--cyan);">Boost local pack rankings</div>
+    </div>
+  
+    <div class="opportunity-card">
+      <div class="opportunity-header">
+        <div class="opportunity-icon warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <span class="badge-pill warning">Medium Priority</span>
+      </div>
+      <h3 class="opportunity-title">Fix Directory Listings</h3>
+      <p class="opportunity-description">Ensure consistent Name, Address, and Phone Number across all major directories and claim unclaimed profiles.</p>
+      <div class="opportunity-impact" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 600; color: var(--cyan);">Strengthen local search signals</div>
+    </div>
+  
+    <div class="opportunity-card">
+      <div class="opportunity-header">
+        <div class="opportunity-icon warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <span class="badge-pill warning">Medium Priority</span>
+      </div>
+      <h3 class="opportunity-title">Improve Website Performance</h3>
+      <p class="opportunity-description">Optimize page speed and mobile experience to reduce bounce rates.</p>
+      <div class="opportunity-impact" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 600; color: var(--cyan);">Improve Core Web Vitals ranking factor</div>
+    </div>
+  </div>
+        <div style="background: linear-gradient(135deg, rgba(52, 211, 153, 0.08) 0%, rgba(34, 211, 238, 0.06) 100%), var(--bg-card); border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 16px; padding: 24px 28px; margin-top: 24px; text-align: center;"><p style="margin: 0; font-size: 15px; color: var(--text-secondary); line-height: 1.6;">Together, these actions represent up to <strong style="color: #34d399; font-size: 18px;">$981/mo</strong> in potential additional business, if you capture a meaningful share of the missed search demand.*</p><p style="margin: 12px 0 0; font-size: 11px; color: var(--text-tertiary); line-height: 1.5; max-width: 720px; margin-left: auto; margin-right: auto;">*Based on 3,114 monthly missed searches &times; 3% click-through rate at improved rankings &times; 3.0% conversion rate &times; $350 average job value. Industry-standard benchmarks; actual results depend on which keywords you target and how quickly rankings improve.</p></div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Bottom Line -->
+    <section class="section bottom-line-section" id="bottom-line" style="padding:40px 0;">
+        <div class="bottom-line-header">
+            <div class="section-badge" style="background: linear-gradient(135deg, var(--accent), var(--magenta)); color: white;">The Bottom Line</div>
+            <h2 class="bottom-line-title"><span class="highlight-gradient">3,114+</span> monthly searches for your services</h2>
+            <p class="bottom-line-subtitle">You're showing up for 0 of them. Let's fix that.</p>
+        </div>
+        <div class="revenue-unlock-container">
+            <div class="revenue-state current-state">
+                <div class="state-label">Today</div>
+                <div class="state-circle current">
+                    <div class="state-amount">0.0%</div>
+                    <div class="state-period">visible</div>
+                </div>
+                <div class="state-rank">0 searches</div>
+            </div>
+            <div class="opportunity-stack">
+    <div class="stack-item" data-value="19">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">plumbing provo utah</span>
+        <span class="stack-value">590 searches/mo &middot; #63</span>
+      </div>
+    </div>
+  
+    <div class="stack-item" data-value="12">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">elevated plumbing</span>
+        <span class="stack-value">480 searches/mo &middot; #44</span>
+      </div>
+    </div>
+  
+    <div class="stack-item" data-value="10">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">plumbing bountiful</span>
+        <span class="stack-value">320 searches/mo &middot; #77</span>
+      </div>
+    </div>
+  
+    <div class="stack-item" data-value="10">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">plumber bountiful ut</span>
+        <span class="stack-value">320 searches/mo &middot; #89</span>
+      </div>
+    </div>
+  
+    <div class="stack-item" data-value="8">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">plumbers park city</span>
+        <span class="stack-value">260 searches/mo &middot; #39</span>
+      </div>
+    </div>
+  
+    <div class="stack-item" data-value="4">
+      <div class="stack-bar"><div class="stack-bar-fill blue" style="width: 0%"></div></div>
+      <div class="stack-label">
+        <span class="stack-action">appliance repair heber city</span>
+        <span class="stack-value">110 searches/mo &middot; #53</span>
+      </div>
+    </div>
+  </div>
+            <div class="revenue-state potential-state">
+                <div class="state-label">Opportunity</div>
+                <div class="state-circle potential">
+                    <div class="state-amount">50%+</div>
+                    <div class="state-period">capturable</div>
+                </div>
+                <div class="state-rank">3,114 searches up for grabs</div>
+            </div>
+        </div>
+        <div class="bottom-line-stats">
+            <div class="bl-stat"><div class="bl-stat-value" data-counter="3114">3,114</div><div class="bl-stat-label">Searches Going to Competitors</div></div>
+            <div class="bl-stat"><div class="bl-stat-value" data-counter="0">0</div><div class="bl-stat-label">Keywords Almost on Page 1</div></div>
+        </div>
+        <div style="text-align: center; padding: 24px; max-width: 900px; margin: 0 auto;">
+            <p style="font-size: 13px; color: var(--text-tertiary); line-height: 1.7;"><em>Search volume data from Google via DataForSEO. "Invisible" means ranking outside page 1 (position 11+) where less than 1% of searchers click.</em></p>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <div class="cta-banner-inner" style="flex-direction: column; align-items: center; gap: 28px; text-align: center;">
+            <div>
+                <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); margin: 0 0 12px 0; font-weight: 600;">Next Step</p>
+                <p style="font-size: 18px; color: white; margin: 0 0 20px 0; line-height: 1.6; max-width: 560px;">The data shows clear, actionable opportunities to grow your digital presence and capture more of the local search demand. Let&#39;s walk through these findings and build a strategy tailored to your business.</p>
+            </div>
+            <a href="https://scorpion.chilipiper.com/me/kyle-gearig" target="_blank" class="cta-banner-btn" style="font-size: 17px; padding: 18px 40px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Schedule Your Free Strategy Session
+            </a>
+            <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15);">
+                <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--magenta)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: white; flex-shrink: 0;">KG</div>
+                <div style="text-align: left;">
+                    <p style="margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); font-weight: 600;">Prepared for you by</p>
+                    <h3 style="margin: 4px 0 0 0; font-size: 20px; font-weight: 800; color: white;">Kyle Gearig</h3>
+                    <p style="margin: 4px 0 0 0; font-size: 13px; color: rgba(255,255,255,0.7);">Business Growth Consultant &bull; Scorpion</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="max-width: 600px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);"></div>
+
+    <footer style="text-align: center; padding: 24px 16px 32px; color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6;">
+        <p style="margin: 0;">Analysis prepared June 2026 &bull; Data collected via website analysis and public sources</p>
+        <p style="margin: 8px 0 0 0; font-size: 11px; color: rgba(255,255,255,0.25);">&copy; Scorpion &bull; scorpion.co</p>
+    </footer>
+
+    <!-- External seo-audit.js loaded with defer to not block paint -->
+    <script src="https://scorpion-digital-footprint.netlify.app/assets/seo/seo-audit.js" defer></script>
+
+    <!-- GSAP loaded conditionally — desktop only, after page is interactive -->
+    <script>
+    (function() {
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // On mobile or reduced motion: skip GSAP entirely. Score ring still works because
+      // stroke-dashoffset is set inline in the SVG.
+      if (isMobile || prefersReduced) {
+        // Just animate the score number with a lightweight requestAnimationFrame counter
+        var scoreNum = document.querySelector('.score-number');
+        if (scoreNum) {
+          var target = parseInt(scoreNum.getAttribute('data-target-score'), 10);
+          if (target && !isNaN(target)) {
+            var start = null;
+            var duration = 1200;
+            scoreNum.textContent = '0';
+            function step(ts) {
+              if (!start) start = ts;
+              var progress = Math.min((ts - start) / duration, 1);
+              scoreNum.textContent = Math.round(progress * target);
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            // Only animate when in view
+            if ('IntersectionObserver' in window) {
+              var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                  if (e.isIntersecting) {
+                    requestAnimationFrame(step);
+                    io.disconnect();
+                  }
+                });
+              });
+              io.observe(scoreNum);
+            } else {
+              requestAnimationFrame(step);
+            }
+          }
+        }
+        return;
+      }
+
+      // Desktop: load GSAP after window load to not block initial paint
+      function loadGSAP() {
+        var gsapScript = document.createElement('script');
+        gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+        gsapScript.onload = function() {
+          var stScript = document.createElement('script');
+          stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
+          stScript.onload = initAnimations;
+          document.body.appendChild(stScript);
+        };
+        document.body.appendChild(gsapScript);
+      }
+
+      if (document.readyState === 'complete') {
+        loadGSAP();
+      } else {
+        window.addEventListener('load', loadGSAP);
+      }
+
+      function initAnimations() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ========== HERO TEXT REVEAL ==========
+        var heroBadge = document.querySelector('.hero-badge');
+        var heroTitle = document.querySelector('.hero-title');
+        var heroSub = document.querySelector('.hero-subtitle');
+        if (heroBadge) gsap.from(heroBadge, { y: -30, opacity: 0, duration: 0.8, ease: 'back.out(1.7)', delay: 0.2 });
+        if (heroTitle) gsap.from(heroTitle, { clipPath: 'inset(0 100% 0 0)', opacity: 0, duration: 1.2, ease: 'power3.out', delay: 0.5 });
+        if (heroSub) gsap.from(heroSub, { y: 20, opacity: 0, duration: 0.8, ease: 'power2.out', delay: 0.9 });
+
+        // ========== HERO BROWSER MOCKUP ==========
+        var browserFrame = document.querySelector('.browser-frame');
+        if (browserFrame) {
+          gsap.from(browserFrame, { scale: 0.9, rotateX: 5, opacity: 0, duration: 1.4, ease: 'power3.out', delay: 0.6, transformPerspective: 1000 });
+        }
+
+        // ========== SCORE RING DRAW + COUNTER ==========
+        var scoreRing = document.querySelector('.score-ring-fill');
+        var scoreNum = document.querySelector('.score-number');
+        if (scoreRing && scoreNum) {
+          var targetOffset = parseFloat(scoreRing.getAttribute('data-target-offset'));
+          var targetScore = parseInt(scoreNum.getAttribute('data-target-score'), 10);
+          gsap.set(scoreRing, { strokeDashoffset: 880 });
+          var scoreTl = gsap.timeline({
+            scrollTrigger: { trigger: '.score-hero', start: 'top 80%', once: true }
+          });
+          scoreTl.to(scoreRing, { strokeDashoffset: targetOffset, duration: 2, ease: 'power2.out' });
+          var counter = { val: 0 };
+          scoreTl.to(counter, {
+            val: targetScore, duration: 2, ease: 'power2.out',
+            onUpdate: function() { scoreNum.textContent = Math.round(counter.val); }
+          }, 0);
+        }
+
+        // ========== SUB-SCORES STAGGER ==========
+        gsap.from('.sub-score', {
+          x: -40, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out',
+          scrollTrigger: { trigger: '.sub-scores', start: 'top 85%', once: true }
+        });
+
+        // ========== SECTION HEADER REVEALS ==========
+        document.querySelectorAll('.section-header').forEach(function(header) {
+          var badge = header.querySelector('.section-badge');
+          var title = header.querySelector('.section-title');
+          var subtitle = header.querySelector('.section-subtitle');
+          var tl = gsap.timeline({ scrollTrigger: { trigger: header, start: 'top 85%', once: true } });
+          if (badge) tl.from(badge, { x: -30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0);
+          if (title) tl.from(title, { clipPath: 'inset(0 100% 0 0)', opacity: 0, duration: 0.8, ease: 'power3.out' }, 0.2);
+          if (subtitle) tl.from(subtitle, { y: 15, opacity: 0, duration: 0.6, ease: 'power2.out' }, 0.5);
+        });
+
+        // ========== INSIGHT CARDS ==========
+        document.querySelectorAll('.insights-grid').forEach(function(grid) {
+          var cards = grid.querySelectorAll('.insight-card');
+          cards.forEach(function(card, i) {
+            gsap.from(card, {
+              x: i % 2 === 0 ? -60 : 60, opacity: 0, duration: 0.7, ease: 'power2.out',
+              scrollTrigger: { trigger: card, start: 'top 85%', once: true }
+            });
+          });
+        });
+
+        // ========== KEYWORD TABLE ROWS ==========
+        var kwRows = document.querySelectorAll('.competitor-table tbody tr');
+        if (kwRows.length) {
+          gsap.from(kwRows, {
+            x: 40, opacity: 0, duration: 0.4, stagger: 0.05, ease: 'power2.out',
+            scrollTrigger: { trigger: kwRows[0].closest('table'), start: 'top 80%', once: true }
+          });
+        }
+
+        // ========== MARKET STATS GRID ==========
+        var marketGrid = document.querySelector('.market-stats-grid');
+        if (marketGrid) {
+          gsap.from(marketGrid.children, {
+            scale: 0.8, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'back.out(1.7)',
+            scrollTrigger: { trigger: marketGrid, start: 'top 85%', once: true }
+          });
+        }
+
+        // ========== NUMBER COUNTERS ==========
+        document.querySelectorAll('[data-counter]').forEach(function(el) {
+          var target = parseFloat(el.getAttribute('data-counter'));
+          var suffix = el.getAttribute('data-suffix') || '';
+          var prefix = el.getAttribute('data-prefix') || '';
+          var isFloat = String(target).indexOf('.') !== -1;
+          var originalHTML = el.innerHTML;
+          gsap.from({ val: 0 }, {
+            val: target, duration: 1.8, ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+            onUpdate: function() {
+              var v = this.targets()[0].val;
+              if (isFloat) { el.textContent = prefix + v.toFixed(1) + suffix; }
+              else if (v >= 1000000) { el.textContent = prefix + (v / 1000000).toFixed(1) + 'M' + suffix; }
+              else { el.textContent = prefix + Math.round(v).toLocaleString('en-US') + suffix; }
+            },
+            onComplete: function() { el.innerHTML = originalHTML; }
+          });
+        });
+
+        // ========== TRAFFIC CHART SVG DRAW ==========
+        var polyline = document.querySelector('svg polyline[points]');
+        var areaFill = document.querySelector('svg polygon[points]');
+        if (polyline) {
+          var len = polyline.getTotalLength ? polyline.getTotalLength() : 2000;
+          polyline.style.strokeDasharray = len;
+          polyline.style.strokeDashoffset = len;
+          var chartTl = gsap.timeline({
+            scrollTrigger: { trigger: polyline.closest('svg'), start: 'top 80%', once: true }
+          });
+          chartTl.to(polyline, { strokeDashoffset: 0, duration: 1.5, ease: 'power2.out' });
+          if (areaFill) {
+            gsap.set(areaFill, { opacity: 0 });
+            chartTl.to(areaFill, { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+          }
+          var svgEl = polyline.closest('svg');
+          if (svgEl) {
+            var circles = svgEl.querySelectorAll('circle');
+            circles.forEach(function(c) { gsap.set(c, { scale: 0, transformOrigin: 'center' }); });
+            chartTl.to(circles, { scale: 1, duration: 0.4, stagger: 0.15, ease: 'back.out(2)' }, '-=0.5');
+          }
+        }
+
+        // ========== SVG RING DRAWS ==========
+        document.querySelectorAll('svg circle[stroke-dasharray]').forEach(function(circle) {
+          if (circle.classList.contains('score-ring-fill') || circle.classList.contains('score-ring-track')) return;
+          var dashArr = parseFloat(circle.getAttribute('stroke-dasharray'));
+          var targetDashOff = parseFloat(circle.style.strokeDashoffset || circle.getAttribute('stroke-dashoffset'));
+          if (!dashArr || isNaN(targetDashOff)) return;
+          gsap.set(circle, { strokeDashoffset: dashArr });
+          gsap.to(circle, {
+            strokeDashoffset: targetDashOff, duration: 1.5, ease: 'power2.out',
+            scrollTrigger: { trigger: circle.closest('section') || circle.closest('div'), start: 'top 80%', once: true }
+          });
+        });
+
+        // ========== DIFFICULTY BARS ==========
+        document.querySelectorAll('.diff-bar-fill').forEach(function(fill) {
+          var w = fill.style.width;
+          if (!w || w === '0%') return;
+          gsap.set(fill, { width: '0%' });
+          gsap.to(fill, {
+            width: w, duration: 0.8, ease: 'power2.out',
+            scrollTrigger: { trigger: fill.closest('table') || fill, start: 'top 80%', once: true }
+          });
+        });
+
+        // ========== RATING BARS ==========
+        document.querySelectorAll('.rating-bar-fill').forEach(function(bar) {
+          var w = bar.style.width;
+          if (!w || w === '0%') return;
+          gsap.set(bar, { width: '0%' });
+          gsap.to(bar, {
+            width: w, duration: 0.8, ease: 'power2.out',
+            scrollTrigger: { trigger: bar.closest('div[style]') || bar, start: 'top 80%', once: true }
+          });
+        });
+
+        // ========== BOTTOM LINE ==========
+        var blSection = document.querySelector('.bottom-line-section');
+        if (blSection) {
+          gsap.from('.bottom-line-header', {
+            y: 30, opacity: 0, duration: 0.8, ease: 'power2.out',
+            scrollTrigger: { trigger: blSection, start: 'top 80%', once: true }
+          });
+          gsap.from('.revenue-state', {
+            scale: 0.8, opacity: 0, duration: 0.7, stagger: 0.2, ease: 'back.out(1.5)',
+            scrollTrigger: { trigger: '.revenue-unlock-container', start: 'top 85%', once: true }
+          });
+          gsap.from('.stack-item', {
+            x: -30, opacity: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out',
+            scrollTrigger: { trigger: '.opportunity-stack', start: 'top 85%', once: true }
+          });
+          gsap.from('.bl-stat', {
+            y: 20, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out',
+            scrollTrigger: { trigger: '.bottom-line-stats', start: 'top 85%', once: true }
+          });
+        }
+
+        // ========== CTA BANNER ==========
+        gsap.from('.cta-banner', {
+          y: 30, opacity: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: '.cta-banner', start: 'top 90%', once: true }
+        });
+
+        // ========== GAP CHART BARS ==========
+        document.querySelectorAll('.gap-bar').forEach(function(bar) {
+          var pct = bar.getAttribute('data-percent');
+          var fill = bar.querySelector('.gap-bar-fill');
+          if (fill && pct) {
+            gsap.set(fill, { width: '0%' });
+            gsap.to(fill, {
+              width: Math.min(parseInt(pct, 10), 100) + '%', duration: 1, ease: 'power2.out',
+              scrollTrigger: { trigger: bar, start: 'top 85%', once: true }
+            });
+          }
+        });
+
+        ScrollTrigger.refresh();
+      }
+    })();
+    </script>
+<!-- Booking debug: sellerName=Kyle Gearig | bookingLink=https://scorpion.chilipiper.com/me/kyle-gearig --></body>
+</html>
